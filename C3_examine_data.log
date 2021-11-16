@@ -1,0 +1,480 @@
+-------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\mm_wi\Documents\ntu_agecon\Labor_empirical\Class_Data\rawdata\C3_exam
+> ine_data.log
+  log type:  text
+ opened on:  16 Mar 2021, 15:17:23
+
+. 
+end of do-file
+
+. do "C:\Users\mm_wi\AppData\Local\Temp\STD1748_000000.tmp"
+
+. use "C:\Users\mm_wi\Documents\ntu_agecon\Labor_empirical\Class_Data\rawdata\cps_2014_16.d
+> ta",replace
+
+. 
+. 
+. ** Examine data
+. ** It is a good idea to examine your data when you first read it into Stata 
+. ** You should check that all the variables and observations are present and in the correc
+> t format
+. 
+. ** You can see the contents of a data file using the browse or edit command
+. browse
+
+. 
+. edit
+
+. 
+. ** describe produces a summary of the dataset in memory or of the data stored in a Stata-
+> format dataset.
+. describe using "C:\Users\mm_wi\Documents\ntu_agecon\Labor_empirical\Class_Data\rawdata\cp
+> s_2014_16.dta"
+
+Contains data                                 
+  obs:        60,000                          29 Mar 2020 16:29
+ vars:            23                          
+-------------------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------------------
+year            int     %8.0g                 survey year
+serial          long    %12.0g                household serial number
+hwtsupp         double  %12.0g                household weight, supplement
+cpsid           double  %12.0g                cpsid, household record
+region          byte    %8.0g      REGION     region and division
+statefip        byte    %8.0g      STATEFIP   state (fips code)
+asecflag        byte    %8.0g      ASECFLAG   flag for asec
+hflag           byte    %8.0g      HFLAG      flag for the 3/8 file 2014
+county          long    %12.0g                fips county code
+month           byte    %8.0g      MONTH      month
+pernum          byte    %8.0g                 person number in sample unit
+cpsidp          double  %12.0g                cpsid, person record
+wtsupp          double  %12.0g                supplement weight
+age             byte    %8.0g      AGE        age
+sex             byte    %8.0g      gendercode
+                                              sex
+race            int     %8.0g      RACE       race
+marst           byte    %8.0g      MARST      marital status
+educ99          byte    %8.0g      EDUC99     educational attainment, 1990
+ftotval         long    %12.0g                total family income
+inctot          long    %12.0g                total personal income
+incwage         long    %12.0g                wage and salary income
+disabwrk        byte    %8.0g      DISABWRK   work disability
+health          byte    %8.0g      HEALTH     health status
+-------------------------------------------------------------------------------------------
+Sorted by: 
+
+. 
+. 
+. ** isid
+. isid serial 
+variable serial does not uniquely identify the observations
+r(459);
+
+end of do-file
+
+r(459);
+
+. do "C:\Users\mm_wi\AppData\Local\Temp\STD1748_000000.tmp"
+
+. use "C:\Users\mm_wi\Documents\ntu_agecon\Labor_empirical\Class_Data\rawdata\cps_2014_16.d
+> ta",replace
+
+. 
+. 
+. ** Examine data
+. ** It is a good idea to examine your data when you first read it into Stata 
+. ** You should check that all the variables and observations are present and in the correc
+> t format
+. 
+. ** You can see the contents of a data file using the browse or edit command
+. browse
+
+. 
+. edit
+
+. 
+. ** describe produces a summary of the dataset in memory or of the data stored in a Stata-
+> format dataset.
+. describe using "C:\Users\mm_wi\Documents\ntu_agecon\Labor_empirical\Class_Data\rawdata\cp
+> s_2014_16.dta"
+
+Contains data                                 
+  obs:        60,000                          29 Mar 2020 16:29
+ vars:            23                          
+-------------------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------------------
+year            int     %8.0g                 survey year
+serial          long    %12.0g                household serial number
+hwtsupp         double  %12.0g                household weight, supplement
+cpsid           double  %12.0g                cpsid, household record
+region          byte    %8.0g      REGION     region and division
+statefip        byte    %8.0g      STATEFIP   state (fips code)
+asecflag        byte    %8.0g      ASECFLAG   flag for asec
+hflag           byte    %8.0g      HFLAG      flag for the 3/8 file 2014
+county          long    %12.0g                fips county code
+month           byte    %8.0g      MONTH      month
+pernum          byte    %8.0g                 person number in sample unit
+cpsidp          double  %12.0g                cpsid, person record
+wtsupp          double  %12.0g                supplement weight
+age             byte    %8.0g      AGE        age
+sex             byte    %8.0g      gendercode
+                                              sex
+race            int     %8.0g      RACE       race
+marst           byte    %8.0g      MARST      marital status
+educ99          byte    %8.0g      EDUC99     educational attainment, 1990
+ftotval         long    %12.0g                total family income
+inctot          long    %12.0g                total personal income
+incwage         long    %12.0g                wage and salary income
+disabwrk        byte    %8.0g      DISABWRK   work disability
+health          byte    %8.0g      HEALTH     health status
+-------------------------------------------------------------------------------------------
+Sorted by: 
+
+. 
+. 
+. ** isid
+. isid serial 
+variable serial does not uniquely identify the observations
+r(459);
+
+end of do-file
+
+r(459);
+
+. do "C:\Users\mm_wi\AppData\Local\Temp\STD1748_000000.tmp"
+
+. tab age
+
+                age |      Freq.     Percent        Cum.
+--------------------+-----------------------------------
+       under 1 year |        677        1.13        1.13
+                  1 |        805        1.34        2.47
+                  2 |        850        1.42        3.89
+                  3 |        894        1.49        5.38
+                  4 |        882        1.47        6.85
+                  5 |        952        1.59        8.43
+                  6 |        940        1.57       10.00
+                  7 |        979        1.63       11.63
+                  8 |        917        1.53       13.16
+                  9 |        967        1.61       14.77
+                 10 |        915        1.52       16.30
+                 11 |        955        1.59       17.89
+                 12 |        958        1.60       19.48
+                 13 |        989        1.65       21.13
+                 14 |      1,021        1.70       22.84
+                 15 |        964        1.61       24.44
+                 16 |      1,031        1.72       26.16
+                 17 |        924        1.54       27.70
+                 18 |        904        1.51       29.21
+                 19 |        701        1.17       30.38
+                 20 |        708        1.18       31.55
+                 21 |        685        1.14       32.70
+                 22 |        666        1.11       33.81
+                 23 |        712        1.19       34.99
+                 24 |        658        1.10       36.09
+                 25 |        729        1.22       37.30
+                 26 |        731        1.22       38.52
+                 27 |        673        1.12       39.65
+                 28 |        738        1.23       40.88
+                 29 |        737        1.23       42.10
+                 30 |        788        1.31       43.42
+                 31 |        769        1.28       44.70
+                 32 |        825        1.38       46.07
+                 33 |        856        1.43       47.50
+                 34 |        773        1.29       48.79
+                 35 |        834        1.39       50.18
+                 36 |        755        1.26       51.44
+                 37 |        770        1.28       52.72
+                 38 |        767        1.28       54.00
+                 39 |        764        1.27       55.27
+                 40 |        772        1.29       56.56
+                 41 |        802        1.34       57.90
+                 42 |        886        1.48       59.37
+                 43 |        868        1.45       60.82
+                 44 |        797        1.33       62.15
+                 45 |        830        1.38       63.53
+                 46 |        869        1.45       64.98
+                 47 |        845        1.41       66.39
+                 48 |        830        1.38       67.77
+                 49 |        873        1.46       69.23
+                 50 |        898        1.50       70.72
+                 51 |        829        1.38       72.10
+                 52 |        830        1.38       73.49
+                 53 |        808        1.35       74.83
+                 54 |        790        1.32       76.15
+                 55 |        803        1.34       77.49
+                 56 |        797        1.33       78.82
+                 57 |        746        1.24       80.06
+                 58 |        770        1.28       81.34
+                 59 |        703        1.17       82.52
+                 60 |        705        1.18       83.69
+                 61 |        668        1.11       84.80
+                 62 |        669        1.11       85.92
+                 63 |        577        0.96       86.88
+                 64 |        557        0.93       87.81
+                 65 |        592        0.99       88.80
+                 66 |        515        0.86       89.65
+                 67 |        577        0.96       90.62
+                 68 |        412        0.69       91.30
+                 69 |        362        0.60       91.91
+                 70 |        379        0.63       92.54
+                 71 |        362        0.60       93.14
+                 72 |        353        0.59       93.73
+                 73 |        286        0.48       94.21
+                 74 |        296        0.49       94.70
+                 75 |        288        0.48       95.18
+                 76 |        283        0.47       95.65
+                 77 |        294        0.49       96.14
+                 78 |        249        0.41       96.56
+                 79 |        232        0.39       96.94
+                 80 |        923        1.54       98.48
+                 85 |        912        1.52      100.00
+--------------------+-----------------------------------
+              Total |     60,000      100.00
+
+. tab age sex  
+
+                    |          sex
+                age |         1          2 |     Total
+--------------------+----------------------+----------
+       under 1 year |       348        329 |       677 
+                  1 |       416        389 |       805 
+                  2 |       449        401 |       850 
+                  3 |       470        424 |       894 
+                  4 |       460        422 |       882 
+                  5 |       482        470 |       952 
+                  6 |       469        471 |       940 
+                  7 |       506        473 |       979 
+                  8 |       462        455 |       917 
+                  9 |       465        502 |       967 
+                 10 |       460        455 |       915 
+                 11 |       462        493 |       955 
+                 12 |       505        453 |       958 
+                 13 |       497        492 |       989 
+                 14 |       524        497 |     1,021 
+                 15 |       504        460 |       964 
+                 16 |       539        492 |     1,031 
+                 17 |       452        472 |       924 
+                 18 |       484        420 |       904 
+                 19 |       369        332 |       701 
+                 20 |       344        364 |       708 
+                 21 |       347        338 |       685 
+                 22 |       346        320 |       666 
+                 23 |       342        370 |       712 
+                 24 |       339        319 |       658 
+                 25 |       331        398 |       729 
+                 26 |       363        368 |       731 
+                 27 |       334        339 |       673 
+                 28 |       353        385 |       738 
+                 29 |       346        391 |       737 
+                 30 |       371        417 |       788 
+                 31 |       370        399 |       769 
+                 32 |       388        437 |       825 
+                 33 |       382        474 |       856 
+                 34 |       361        412 |       773 
+                 35 |       384        450 |       834 
+                 36 |       356        399 |       755 
+                 37 |       383        387 |       770 
+                 38 |       389        378 |       767 
+                 39 |       365        399 |       764 
+                 40 |       367        405 |       772 
+                 41 |       379        423 |       802 
+                 42 |       392        494 |       886 
+                 43 |       412        456 |       868 
+                 44 |       390        407 |       797 
+                 45 |       393        437 |       830 
+                 46 |       431        438 |       869 
+                 47 |       384        461 |       845 
+                 48 |       436        394 |       830 
+                 49 |       388        485 |       873 
+                 50 |       449        449 |       898 
+                 51 |       410        419 |       829 
+                 52 |       414        416 |       830 
+                 53 |       373        435 |       808 
+                 54 |       399        391 |       790 
+                 55 |       388        415 |       803 
+                 56 |       387        410 |       797 
+                 57 |       353        393 |       746 
+                 58 |       384        386 |       770 
+                 59 |       366        337 |       703 
+                 60 |       335        370 |       705 
+                 61 |       323        345 |       668 
+                 62 |       317        352 |       669 
+                 63 |       279        298 |       577 
+                 64 |       266        291 |       557 
+                 65 |       264        328 |       592 
+                 66 |       235        280 |       515 
+                 67 |       274        303 |       577 
+                 68 |       202        210 |       412 
+                 69 |       174        188 |       362 
+                 70 |       179        200 |       379 
+                 71 |       164        198 |       362 
+                 72 |       145        208 |       353 
+                 73 |       123        163 |       286 
+                 74 |       147        149 |       296 
+                 75 |       131        157 |       288 
+                 76 |       109        174 |       283 
+                 77 |       130        164 |       294 
+                 78 |       112        137 |       249 
+                 79 |       101        131 |       232 
+                 80 |       396        527 |       923 
+                 85 |       330        582 |       912 
+--------------------+----------------------+----------
+              Total |    29,148     30,852 |    60,000 
+
+. 
+. ** We can use the "tab" command combined with the "sum(varname)" option to gain a quick i
+> dea of the descriptive statistics of certain subgroups
+. ** For example, we can know average wage by age (gender)
+. tab age, sum(incwage)
+
+            |  Summary of wage and salary income
+        age |        Mean   Std. Dev.       Freq.
+------------+------------------------------------
+  under 1 y |     9999999           0         677
+          1 |     9999999           0         805
+          2 |     9999999           0         850
+          3 |     9999999           0         894
+          4 |     9999999           0         882
+          5 |     9999999           0         952
+          6 |     9999999           0         940
+          7 |     9999999           0         979
+          8 |     9999999           0         917
+          9 |     9999999           0         967
+         10 |     9999999           0         915
+         11 |     9999999           0         955
+         12 |     9999999           0         958
+         13 |     9999999           0         989
+         14 |     9999999           0       1,021
+         15 |     343.861   3072.3062         964
+         16 |   1010.5189   5647.2437       1,031
+         17 |   1658.4037   5283.7857         924
+         18 |   3029.9524   5862.6837         904
+         19 |   5452.6234   12543.676         701
+         20 |   8143.8178   15134.082         708
+         21 |   9136.8613   12116.701         685
+         22 |    12362.03   15882.051         666
+         23 |   17637.872   35528.043         712
+         24 |   19429.492   20777.633         658
+         25 |   24102.815   46377.916         729
+         26 |   25200.531   25702.133         731
+         27 |   30697.097   62581.289         673
+         28 |   30933.984    31419.45         738
+         29 |   30029.019    30587.91         737
+         30 |   31366.735   28160.617         788
+         31 |   32905.778   30304.905         769
+         32 |    36699.36   43865.344         825
+         33 |    37850.71   47021.335         856
+         34 |   37589.102   37782.367         773
+         35 |    39211.64   49013.447         834
+         36 |   40791.832   52444.899         755
+         37 |   37647.027   43952.916         770
+         38 |   43663.394   49889.911         767
+         39 |   38132.949   38183.244         764
+         40 |   44417.065   51765.581         772
+         41 |   44087.507   54216.031         802
+         42 |   43667.385   49968.819         886
+         43 |   42177.801   49489.021         868
+         44 |   47718.967   70051.404         797
+         45 |   44653.939   66289.932         830
+         46 |   56987.893   104877.72         869
+         47 |   46298.657   55263.267         845
+         48 |   46015.525   60142.313         830
+         49 |   42669.503   55431.395         873
+         50 |   45687.634   66379.188         898
+         51 |    45207.49   67249.246         829
+         52 |   49859.595   80828.127         830
+         53 |   43492.928   64361.792         808
+         54 |   47359.414   77149.499         790
+         55 |   41713.158   61856.615         803
+         56 |   45038.519   83289.602         797
+         57 |   44556.913   74763.089         746
+         58 |    43280.87   80155.368         770
+         59 |   36934.512   47349.025         703
+         60 |   35065.759   58506.974         705
+         61 |   30487.999   47434.761         668
+         62 |    32457.52   53225.224         669
+         63 |   29273.416   51692.255         577
+         64 |   27714.293   53382.916         557
+         65 |   18016.355    37162.24         592
+         66 |   15370.287   32818.981         515
+         67 |   14139.643   35702.654         577
+         68 |   14769.075   40399.953         412
+         69 |   9251.8039   25113.839         362
+         70 |   8289.5172    25647.36         379
+         71 |    7881.721   23155.705         362
+         72 |   7536.8215   19683.878         353
+         73 |   7947.7657   26806.959         286
+         74 |   6009.4459   19194.845         296
+         75 |   4873.0521   19433.828         288
+         76 |   5427.1272   21957.071         283
+         77 |   9481.5476   41720.065         294
+         78 |   4840.9036   17606.705         249
+         79 |   5748.7241   24912.057         232
+         80 |    3060.442   17792.395         923
+         85 |   1311.2423   8720.6161         912
+------------+------------------------------------
+      Total |   2306038.8   4185713.2      60,000
+
+. tab sex, sum(incwage)
+
+            |  Summary of wage and salary income
+        sex |        Mean   Std. Dev.       Freq.
+------------+------------------------------------
+          1 |   2421356.5     4251034      29,148
+          2 |   2197090.2   4120154.4      30,852
+------------+------------------------------------
+      Total |   2306038.8   4185713.2      60,000
+
+. 
+. 
+. ** "inspect": This is a way to eyeball the distribution of a variable, including as it do
+> es a mini-histogram.
+. ** It is also useful for identifying outliers or unusual values, or for spotting non-inte
+> gers in a variable that should only contain integers
+. inspect age
+
+age:  age                                       Number of Observations
+---------                              ---------------------------------------
+                                             Total      Integers   Nonintegers
+|  #                         Negative            -             -             -
+|  #       #                 Zero              677           677             -
+|  #   #   #   #             Positive       59,323        59,323             -
+|  #   #   #   #                       -----------   -----------   -----------
+|  #   #   #   #   #         Total          60,000        60,000             -
+|  #   #   #   #   #         Missing             -
++----------------------                -----------
+0                    85                     60,000
+  (82 unique values)
+
+      age is labeled and all values are documented in the label.
+
+. inspect incwage
+
+incwage:  wage and salary income                Number of Observations
+--------------------------------       ---------------------------------------
+                                             Total      Integers   Nonintegers
+|  #                         Negative            -             -             -
+|  #                         Zero           17,059        17,059             -
+|  #                         Positive       42,941        42,941             -
+|  #                                   -----------   -----------   -----------
+|  #                         Total          60,000        60,000             -
+|  #   .   .   .   #         Missing             -
++----------------------                -----------
+0               9999999                     60,000
+(More than 99 unique values)
+
+. 
+. 
+. log close
+      name:  <unnamed>
+       log:  C:\Users\mm_wi\Documents\ntu_agecon\Labor_empirical\Class_Data\rawdata\C3_exam
+> ine_data.log
+  log type:  text
+ closed on:  16 Mar 2021, 15:18:05
+-------------------------------------------------------------------------------------------
